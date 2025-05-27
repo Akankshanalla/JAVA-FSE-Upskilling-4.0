@@ -1,0 +1,334 @@
+/* ===== 1. Why CSS? Inline vs Internal vs External ===== */
+/* This external stylesheet contains all reusable styles for the portal */
+
+/* ===== 2. CSS Syntax and Comments ===== */
+
+/* ===== Reset all elements ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== Global Styles ===== */
+/* Basic body styles and default font */
+body {
+    font-family: 'Open Sans', Arial, sans-serif; /* Google Font imported in HTML */
+    margin: 20px;
+    background-color: #f9f9f9; /* fallback background color */
+    background-image: url('images/image.jpg'); /* example background image */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* ===== 3. Selectors Playground ===== */
+
+/* Style all h2 elements */
+h2 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #007BFF, #0056b3);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ID selector for main header/banner */
+#register {
+    background-color: rgba(240, 248, 255, 0.9);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+/* Class selector for gallery images */
+.gallery {
+    width: 100%;
+    max-width: 300px;
+    border: 3px solid #333;
+    cursor: pointer;
+}
+
+/* Grouping selector for h3 and p elements */
+h3, p {
+    color: #444;
+    margin-bottom: 12px;
+}
+
+/* ===== 4. Color & Background Styling ===== */
+
+/* Use RGBA for translucent borders */
+.gallery {
+    border-color: rgba(51, 51, 51, 0.8);
+}
+
+/* Nav background with fallback and gradient */
+nav {
+    background: linear-gradient(45deg, #007BFF, #0056b3);
+    padding: 1em 2em;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ===== 5. Typography: Fonts and Text ===== */
+
+/* Set font-weight, letter-spacing, text-transform in nav links */
+nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 8px 14px;
+    border-radius: 5px;
+    transition: color 0.3s, background-color 0.3s, padding 0.3s;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Text alignment and spacing for form labels and inputs */
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 0.03em;
+}
+
+/* ===== 6. Link and List Styling ===== */
+
+/* Link pseudo-classes in nav */
+nav a:link {
+    color: white;
+}
+
+nav a:visited {
+    color: #cce5ff;
+}
+
+nav a:hover {
+    background-color: white;
+    color: #0056b3;
+}
+
+nav a:active {
+    background-color: #003d80;
+    color: #ffffff;
+}
+
+/* ===== 7. Table Styling ===== */
+
+/* Style table with borders, padding, and zebra striping */
+table {
+    width: 100%;
+    margin-top: 1em;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* ===== 8. Box Model & Layout Control ===== */
+
+/* Add margin, padding and border to event cards */
+.eventCard {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px 0;
+}
+
+/* Outline to highlight selected form inputs */
+input:focus, select:focus, textarea:focus {
+    border-color: #007bff;
+    outline: 3px solid #0056b3;
+}
+
+/* ===== 9. Multiple Columns in Text ===== */
+
+/* Multi-column layout for news article section */
+#newsArticle {
+    column-count: 2;
+    column-gap: 30px;
+    column-rule: 1px solid gray;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 700px;
+}
+
+/* ===== 10. Responsive Web Design with Media Queries ===== */
+
+@media (max-width: 768px) {
+    /* Stack navigation links vertically */
+    nav a {
+        display: block;
+        margin: 10px 0;
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    /* Reduce image size */
+    .gallery {
+        max-width: 100%;
+        border-width: 2px;
+    }
+
+    /* Reduce font sizes */
+    body {
+        font-size: 90%;
+        margin: 10px;
+    }
+
+    /* Adjust registration form width */
+    #register {
+        max-width: 100%;
+        padding: 20px;
+        margin: 20px 10px;
+    }
+
+    /* Multi-column layout to single column */
+    #newsArticle {
+        column-count: 1;
+        column-gap: 0;
+        column-rule: none;
+    }
+}
+
+/* ===== 11. Debug & Test Notes ===== */
+/* Use browser dev tools to verify styles, media queries, and responsive design */
+
+/* ===== Registration Form ===== */
+#register {
+    background-color: #f0f8ff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+#register h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    font-size: 1.8em;
+}
+
+/* Form Labels and Inputs */
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Textarea specific styling */
+form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+/* Submit buttons inside forms */
+form button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 1em;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* ===== Feedback Section ===== */
+#feedbackText {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+#feedbackImage {
+    width: 500px;
+    margin-top: 15px;
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+    display: block;
+    margin: 20px auto;
+}
+
+#feedbackImage.enlarged {
+    transform: scale(1.8);
+    cursor: zoom-out;
+}
+
+/* Feedback buttons */
+#feedback button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#feedback button:hover {
+    background-color: #0056b3;
+}
+
+/* Feedback confirmation message */
+#feedbackConfirmation {
+    display: block;
+    margin-top: 10px;
+    color: green;
+    font-weight: bold;
+}
